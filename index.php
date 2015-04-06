@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Voskan
- * Date: 06.04.2015
- * Time: 17:02
- */
+require_once __DIR__ . '/models/News.php';
+
+$items = News::getAll();
+
+include __DIR__ . '/views/index.php';
