@@ -1,6 +1,11 @@
 <?php
-require_once __DIR__ . '/models/News.php';
 
-$items = News::getAll();
+$controller = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$action = isset($_GET['act']) ? $_GET['act'] : 'All';
 
-include __DIR__ . '/views/index.php';
+$controllerClassName = $controller . 'Controller';
+require_once __DIR__ . '/controllers/' . $controllerClassName . '.php';
+
+$ctrl = new $controllerClassName();
+$method = 'action'.$action;
+$ctrl->$method();
