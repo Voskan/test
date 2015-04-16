@@ -1,11 +1,7 @@
 <?php
 
-$controller = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
-$action = isset($_GET['act']) ? $_GET['act'] : 'All';
+require_once __DIR__.'/models/news.php';
 
-$controllerClassName = $controller . 'Controller';
-require_once __DIR__ . '/controllers/' . $controllerClassName . '.php';
+$items = News_getAll();
 
-$ctrl = new $controllerClassName();
-$method = 'action'.$action;
-$ctrl->$method();
+include_once __DIR__.'/views/index.php';
