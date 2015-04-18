@@ -3,7 +3,7 @@
 <head lang="ru">
     <meta charset="UTF-8">
     <title>Add news</title>
-    <link rel="stylesheet" href="/views/news/csss/css/style.css">
+    <link rel="stylesheet" href="/views/news/css/style.css">
 </head>
 <body>
 <header>
@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="/">Բոլոր նորությունները</a></li>
-            <li><a href="/add.php">Ավելացնել նորություն</a></li>
+            <li><a href="/?ctrl=admin&act=add">Ավելացնել նորություն</a></li>
         </ul>
     </nav>
     <section id="main-content">
@@ -23,7 +23,7 @@
             </div>
             <? unset($_SESSION['error'])?>
         <?endif?>
-        <form action="/add.php" method="post">
+        <form action="#" method="post">
             <table>
                 <tr>
                     <td>Վերնագիրը</td>

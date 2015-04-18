@@ -10,6 +10,7 @@ $controller .= 'Controller';
 $action = ucfirst($action);
 $method = 'action' . $action;
 
+session_start();
 
 $ctrl = new $controller();
 $ctrl->$method();

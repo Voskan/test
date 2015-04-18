@@ -13,7 +13,7 @@
         <nav>
             <ul>
                 <li><a href="/">Բոլոր նորությունները</a></li>
-                <li><a href="/add.php">Ավելացնել նորություն</a></li>
+                <li><a href="/?ctrl=admin&act=add">Ավելացնել նորություն</a></li>
             </ul>
         </nav>
         <section id="main-content">
