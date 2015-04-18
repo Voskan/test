@@ -1,21 +1,14 @@
 <?php
 
-class News{
+class News extends AbstractModel{
 
     public $id;
     public $title;
     public $description;
     public $text;
 
-    public static function getAll(){
-        $db = new DB();
-        return $db->queryAll('SELECT * FROM `news` ORDER BY `date` DESC', 'News');
-    }
-
-    public static function getOne($id){
-        $db = new DB();
-        return $db->queryOne("SELECT * FROM `news` WHERE `id`='$id' LIMIT 1");
-    }
+    protected static $table = 'news';
+    protected static $class = 'News';
 
     public static function add($data){
         $db = new DB();
