@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__.'/../classes/DB.php';
 
 class News{
 
@@ -10,12 +9,12 @@ class News{
 
     public static function getAll(){
         $db = new DB();
-        return $db->query('SELECT * FROM `news` ORDER BY `date` DESC', 'News');
+        return $db->queryAll('SELECT * FROM `news` ORDER BY `date` DESC', 'News');
     }
 
     public static function getOne($id){
         $db = new DB();
-        return $db->getOne("SELECT * FROM `news` WHERE `id`='$id' LIMIT 1");
+        return $db->queryOne("SELECT * FROM `news` WHERE `id`='$id' LIMIT 1");
     }
 
     public static function add($data){

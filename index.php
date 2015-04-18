@@ -1,6 +1,15 @@
 <?php
-require_once __DIR__.'/models/News.php';
+require_once __DIR__ . '/autoload.php';
 
-$items = News::getAll();
+$controller = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$action = isset($_GET['act']) ? $_GET['act'] : 'All';
 
-include_once __DIR__.'/views/index.php';
+$controller = ucfirst($controller);
+$controller .= 'Controller';
+
+$action = ucfirst($action);
+$method = 'action' . $action;
+
+
+$ctrl = new $controller();
+$ctrl->$method();

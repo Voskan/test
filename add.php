@@ -21,4 +21,4 @@ if(!empty($_POST)){
     }
 }
 
-include_once __DIR__.'/views/add_news.php';
+include_once __DIR__ . '/views/add.php';

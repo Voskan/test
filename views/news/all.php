@@ -3,7 +3,7 @@
 <head lang="ru">
     <meta charset="UTF-8">
     <title>All news</title>
-    <link rel="stylesheet" href="/views/css/style.css">
+    <link rel="stylesheet" href="/views/news/css/style.css">
 </head>
 <body>
     <header>
@@ -19,11 +19,11 @@
         <section id="main-content">
             <?foreach($items as $item):?>
                 <article>
-                    <h3><a href="/full.php?id=<?=$item->id?>"><?=$item->title?></a></h3>
+                    <h3><a href="/?ctrl=news&act=one&id=<?=$item->id?>"><?=$item->title?></a></h3>
                     <p><?=$item->description?></p>
                     <div>
                         <span><?=$item->date?></span>
-                        <a href="/full.php?id=<?=$item->id?>">Մանրամասն</a>
+                        <a href="/?ctrl=news&act=one&id=<?=$item->id?>">Մանրամասն</a>
                     </div>
                 </article>
             <?endforeach?>

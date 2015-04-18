@@ -7,7 +7,7 @@ class DB{
         mysql_select_db('test');
     }
 
-    public function query($sql, $class = 'stdClass'){
+    public function queryAll($sql, $class = 'stdClass'){
         $res = mysql_query($sql);
 
         if(false === $res)
@@ -20,14 +20,8 @@ class DB{
         return $return;
     }
 
-    public function getOne($sql, $class = 'stdClass'){
-        $res = mysql_query($sql);
-
-        if(false === $res)
-            return false;
-
-        $row = mysql_fetch_object($res, $class);
-        return $row;
+    public function queryOne($sql, $class = 'stdClass'){
+        return $this->queryAll($sql, $class)[0];
     }
 
     public function exec($sql){
