@@ -19,11 +19,11 @@
         <section id="main-content">
             <?foreach($items as $item):?>
                 <article>
-                    <h3><a href="/full.php?id=<?=$item['id']?>"><?=$item['title']?></a></h3>
-                    <p><?=$item['description']?></p>
+                    <h3><a href="/full.php?id=<?=$item->id?>"><?=$item->title?></a></h3>
+                    <p><?=$item->description?></p>
                     <div>
-                        <span><?=$item['date']?></span>
-                        <a href="/full.php?id=<?=$item['id']?>">Մանրամասն</a>
+                        <span><?=$item->date?></span>
+                        <a href="/full.php?id=<?=$item->id?>">Մանրամասն</a>
                     </div>
                 </article>
             <?endforeach?>

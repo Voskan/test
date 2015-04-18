@@ -1,20 +1,26 @@
 <?php
-require_once __DIR__.'/../functions/sql.php';
+require_once __DIR__.'/../classes/DB.php';
 
-function News_getAll(){
-    $sql = 'SELECT * FROM `news` ORDER BY `date` DESC';
-    return Sql_query($sql);
-}
+class News{
 
-function News_getOne($id){
-    $sql = "SELECT * FROM `news` WHERE `id`='$id' LIMIT 1";
-    return Sql_getOne($sql);
-}
+    public $id;
+    public $title;
+    public $description;
+    public $text;
 
-function News_insert($data){
-    $sql = "INSERT INTO `news` (title, description, text, date)
-            VALUES('".$data['title']."', '".$data['description']."', '".$data['text']."', '".$data['date']."')
-            ";
+    public static function getAll(){
+        $db = new DB();
+        return $db->query('SELECT * FROM `news` ORDER BY `date` DESC', 'News');
+    }
 
-    Sql_exec($sql);
+    public static function getOne($id){
+        $db = new DB();
+        return $db->getOne("SELECT * FROM `news` WHERE `id`='$id' LIMIT 1");
+    }
+
+    public static function add($data){
+        $db = new DB();
+        $db->exec("INSERT INTO `news` (title, description, text, date)
+                    VALUES('".$data['title']."', '".$data['description']."', '".$data['text']."', '".$data['date']."')");
+    }
 }

@@ -18,10 +18,10 @@
     </nav>
     <section id="main-content">
         <article>
-            <h1><?=$item['title']?></h1>
-            <p><?=$item['text']?></p>
+            <h1><?=$item->title?></h1>
+            <p><?=$item->text?></p>
             <div>
-                <span><?=$item['date']?></span>
+                <span><?=$item->date?></span>
             </div>
         </article>
     </section>

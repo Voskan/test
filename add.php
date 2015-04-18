@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once __DIR__.'/models/news.php';
+require_once __DIR__ . '/models/News.php';
 
 if(!empty($_POST)){
     $data = [];
@@ -13,7 +13,8 @@ if(!empty($_POST)){
         $data['text'] = $_POST['text'];
         $data['date'] = date('Y-m-d');
 
-        News_insert($data);
+        News::add($data);
+
         header('Location: /');
     }else{
         $_SESSION['error'] = 'Բոլոր տողերը պարտադիր են լրացման համար։';

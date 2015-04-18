@@ -5,11 +5,8 @@ if(!empty($_GET['id']))
 else
     header('Location: /');
 
-require_once __DIR__.'/models/news.php';
+require_once __DIR__ . '/models/News.php';
 
-$item = News_getOne($id);
-
-if($item === false)
-    header('Location: /');
+$item = News::getOne($id);
 
 include_once __DIR__.'/views/one_news.php';
