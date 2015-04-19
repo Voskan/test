@@ -4,7 +4,10 @@ class NewsController {
 
     public function actionAll(){
         $items = News::getAll();
-        include_once __DIR__.'/../views/news/all.php';
+
+        $view = new View();
+        $view->items = $items;
+        $view->display('news/all');
     }
 
     public function actionOne(){
@@ -13,6 +16,9 @@ class NewsController {
             header('Location: /');
 
         $item = News::getOne($id);
-        include_once __DIR__.'/../views/news/one.php';
+
+        $view = new View();
+        $view->item = $item;
+        $view->display('news/one');
     }
 }
